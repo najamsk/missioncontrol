@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE HTML> 
+<html lang="en"> 
+	<head> 
+		<title> Mission Control</title> 
+		<meta charset="utf-8"> 
+		
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" type="text/css" href="css/MyFontsWebfontsOrderM2926349.css">
+		<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" /> 
+		<link type="text/css" href="css/style.css" rel="stylesheet" media="all" />		
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script> 
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script> 	
+		<script type="text/javascript" src="js/jquery.hoverIntent.minified.js"></script>
+		<script type="text/javascript" src="js/jquery.jclock.js"></script>
+		
+		<script type="text/javascript" src="js/Three.js"></script> 
+ 
+		<script type="text/javascript" src="js/Detector.js"></script> 
+		<script type="text/javascript" src="js/RequestAnimationFrame.js"></script> 
+		<script type="text/javascript" src="js/Tween.js"></script>
+		
+		<script type="text/javascript" src="js/globe.js"></script>
+		<script type="text/javascript" src="js/menu.js"></script>
+
+		<script type="text/javascript">
+		
+			$(window).load(function () {
+				if ( ! Detector.webgl ) {
+							$("#error").show();
+							$("#main").hide();
+					return -1;
+				}
+			
+				$.getJSON('data/mapdata.js', function (data) {
+					//console.log("yes")
+					mapData = data;
+					dataLoaded();	
+				});
+			
+				$.getJSON('data/data.js', function (data) {
+					cityData = data;
+					//console.log("city");
+					$("#stats").append("<span> scott.j38.net Traffic " + data.startDate + " to " + data.endDate + "</span><br/>");
+					$("#stats").append("<span>" + data.totalVisits + " visitors from " + data.totalCities + " cities in " + data.totalCountries + " countries</span><br/>");
+					
+					dataLoaded();	
+				});	
+			
+				$('.menu').jScrollPane();
+				
+				$(window).resize(function() {
+					$('.menu').each( function() {
+						var api = $(this).data('jsp');
+						api.reinitialise();
+					});
+				});					
+				
+			});		
+	
+		</script>
+		
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-457687-4']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</head> 		
+		
+	<body> 		
+	
+		<div id="error">
+			<div id="errorBox">
+				<h1>Mission Control</h1>
+					<div id="errorMessage">
+					Sorry, your browser doesn't support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation">WebGL</a><br>
+					Please try with
+					<a href="http://www.google.com/chrome">Chrome</a>, 
+					<a href="http://www.mozilla.com/en-US/firefox/new/">Firefox</a> or
+					<a href="http://nightly.webkit.org/">Webkit Nightly (Mac)</a>	
+				</div>
+			</div>
+		</div>
+	
+		<div id="main">
+		
+			<div id="head">
+				<h1>Mission Control</h1>
+				<h2>Global Traffic Visualizer v002</h2>
+				<div id="stats"></div>
+				<div id="credits">Created by <a href='http://scott.j38.net/'>Scott Garner</a> and <a href='http://sotisdesign.com/'>Loren Judah</a></div>				
+			</div>
+		
+			<div id="content">
+				
+			</div>
+			
+			<div id="input">
+				<h2 id="inputLabel">select city</h2>
+				<div id="continentBox" class="box">
+					<h3 id="continentLabel" class="label">Continent</h3>
+					<div id="continent" class="menu "></div>
+				</div>
+				
+				<div id="subContinentBox" class="box">
+					<h3 id="subContinentLabel" class="label">Sub-Continent</h3>			
+					<div id="subContinent" class="menu "></div>
+				</div>
+				
+				<div id="countryBox" class="box">
+					<h3 id="countryLabel" class="label">Country</h3>			
+					<div id="country" class="menu "></div>
+				</div>
+				
+				<div id="regionBox" class="box">
+					<h3 id="regionLabel" class="label">Region</h3>			
+					<div id="region" class="menu "></div>
+				</div>
+				
+				<div id="cityBox" class="box">
+					<h3 id="cityLabel" class="label">City</h3>	
+					<div id="city" class="menu "></div>			
+				</div>			
+			</div>
+			
+		</div>
+        
+	</body> 
+</html> 

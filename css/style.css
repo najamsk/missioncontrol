@@ -1,0 +1,196 @@
+body {
+	background: #000;
+	margin: 0px;
+	overflow: hidden;
+	font-size: 12pt;
+	font-family: 'Geogrotesque-Light', 'Lekton','Droid Sans Mono', arial, serif;
+	color: #cff;
+	text-shadow: 0 0 0.125em #dff;	
+	letter-spacing: .05em;
+  -webkit-font-smoothing: antialiased;
+ }
+ 
+ a {
+ 	text-decoration: none;
+	color: #cff; 	
+ }
+ 
+ h1, h2, h3, h4, h5 {font-weight: normal;}
+ 
+ h1 { font-size: 1.4em; text-transform:uppercase;	 margin: 0;padding: 0;}
+ h2 { font-size: 1em; font-family: 'Geogrotesque-Light'; text-transform:uppercase;margin: 0 0; } 
+ h3 { font-size: .82em; cursor:pointer;	 margin: 0;padding: 0;}
+ 
+ #error {
+ 	position: absolute;
+ 	background-image: url('../images/background.jpg');
+ 	background-repeat: no-repeat;
+ 	background-position: center top;
+ 	background-size: contain;
+ 	width: 100%;
+ 	height: 100%;
+ 	max-width: 1920px;
+ 	display: none;
+ }
+ 
+
+#errorBox {
+ 	position: absolute;
+ 	left: 50%;
+ 	top: 50%;
+	margin-left: -12em;
+ 	margin-top: -2em;
+ 	
+  	background: rgba(0, 0, 0, 0.70);  	
+  	box-shadow: 0px 0px 0.125em rgba(0, 0, 0, 0.95);
+  	padding: 12px;
+ 	width: 24em; 
+}
+ 
+ #errorMessage {
+
+  	font-size: .8em;
+  	text-transform: uppercase;	 	
+ }
+ 
+ #errorMessage a {
+
+ 	text-decoration:underline;
+ }
+ 
+ #main {
+ 	width: 100%;
+ 	height: 100%;
+ 	max-width: 1920px;
+ 	position: absolute;
+ 	left: -50%;
+ 	margin-left: 50%;
+ }
+ 
+ #head {
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	z-index:100;	
+  	background: rgba(0, 0, 0, 0.70);  	
+  	box-shadow: 0px 0px 0.125em rgba(0, 0, 0, 0.95);
+  	padding: 12px;
+ 	width: 21em;  	
+ }
+ 
+ #head h1 {
+ 
+ }
+ 
+ #stats, #credits  {
+ 	margin-top: 24px;
+ 	position: relative;
+ 	border-left: 1px solid rgba(200, 95, 95, 0.5);
+ 	padding-left: 6px;
+ 	left: -6px;
+ 	
+  	font-size: .8em;
+  	text-transform: uppercase;	  	
+ }
+ 
+ #content {
+	position: absolute;
+	top: 10%;
+	right: 5%;
+	z-index:100;
+  	width: 14em;
+  	padding: 12px;
+  	background: rgba(0, 0, 0, 0.70);  	
+  	box-shadow: 0px 0px 0.125em rgba(0, 0, 0, 0.95);
+ }
+ 
+ #data {
+ margin-top: 24px;
+ }
+ 
+ #wiki, #geo, #weather {
+  width:  100%;
+	margin-bottom: 12px;
+
+ 	position: relative;
+ 	border-left: 1px solid rgba(200, 95, 95, 0.5);
+ 	padding-left: 6px;
+ 	left: -6px;
+  	font-size: .8em;
+ 	
+ }
+ 
+ 
+ .ui-accordion-header {
+	 cursor:pointer;
+ }
+ 
+ #input {
+  	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	z-index:100;
+	width: 100%;	
+	height: 10em;
+  	background: rgba(0, 0, 0, 0.70);  	
+  	box-shadow: 0px 0px 0.125em rgba(0, 0, 0, 0.95);	
+ }
+ 
+  #inputLabel {
+  	position: absolute;
+  	top: 0em;
+    left: 5%;
+    cursor:pointer;
+    padding-left: .5em;
+}
+ 
+ .menu {
+ 	width: 17.2%;
+ 	height: 5.5em; 	
+ 	top: 2em;
+  	position: absolute; 	
+  	overflow: auto;
+ 	border-left: 1px solid rgba(200, 95, 95, 0.5);
+
+ }
+ 
+label {
+  	text-transform: uppercase;	 
+}
+ 
+.label {
+  	position: absolute; 
+  	bottom: 1.4em;
+  	padding-left: .5em;
+  	font-size: .8em;
+  	text-transform: uppercase;
+  	
+}
+ 
+.menu h3 {
+	cursor: pointer;
+	padding-left: .5em;
+}
+ 
+#continent, #continentLabel {left: 5%;}
+#subContinent, #subContinentLabel {left: 23.2%;}
+#country, #countryLabel {left: 41.4%;  }
+#region, #regionLabel {left: 59.6%;} 
+#city, #cityLabel {left: 77.8%;}
+ 
+ .jspTrack
+{
+	background: rgba(200, 54, 54, 0.2);
+}
+ 
+ 
+.jspVerticalBar
+{
+	background: transparent;
+	width: 12px;
+}
+
+.jspDrag
+{
+	background: rgba(200, 95, 95, 0.5);
+}
